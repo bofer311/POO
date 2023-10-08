@@ -70,12 +70,12 @@ class Block(pygame.sprite.Sprite):
         super().__init__()
         # Get a random color.
         self.color = random.choice((
-            (200, 200, 200),
-            (215, 133, 133),
-            (30, 145, 255),
-            (0, 170, 0),
+            (0, 0, 255),
+            (255, 255, 0),
+            (0, 255, 0),
+            (255, 0, 0),
             (180, 0, 140),
-            (200, 200, 0)
+            (255, 140, 0)
         ))
         self.current = True
         self.struct = np.array(self.struct)
