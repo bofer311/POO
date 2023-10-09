@@ -385,13 +385,13 @@ def draw_grid(background):
     for i in range(11):
         x = TILE_SIZE * i
         pygame.draw.line(
-            background, grid_color, (x, 0), (x, GRID_HEIGHT)
+            background, (255, 255, 255), (x, 0), (x, GRID_HEIGHT)
         )
     # Horizontal liens.
     for i in range(21):
         y = TILE_SIZE * i
         pygame.draw.line(
-            background, grid_color, (0, y), (GRID_WIDTH, y)
+            background, (255, 255, 255), (0, y), (GRID_WIDTH, y)
         )
 
 
@@ -412,8 +412,9 @@ def main():
 
     # Create background.
     background = pygame.Surface(screen.get_size())
-    bgcolor = (10, 10, 10)
+    bgcolor = (0, 0, 0)
     background.fill(bgcolor)
+    image = pygame.image.load("coati android.jpg").convert_alpha()
     # Draw the grid on top of the background.
     draw_grid(background)
     # This makes blitting faster.
@@ -482,6 +483,11 @@ def main():
         score_text = font.render(
             str(blocks.score), True, (255, 255, 255), bgcolor)
         draw_centered_surface(screen, score_text, 270)
+     # Dibujar la imagen en el extremo inferior derecho.
+        score_x = 340 - score_text.get_width()/2
+        score_y = 300
+        screen.blit(image, (score_x, score_y + score_text.get_height() + 10))
+
         if game_over:
             draw_centered_surface(screen, game_over_text, 360)
         # Update.
