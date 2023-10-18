@@ -15,7 +15,7 @@ TILE_SIZE = 30
 pygame.init()
 pygame.mixer.init()
 
-musica = pygame.mixer.Sound("utomp3.com - Tetris 99  Main Theme 1 hour.mp3")
+musica = pygame.mixer.Sound("musica_tetris.ogg")
 musica.play()
 
 musica.play(loops=-1)  # Repetir la música infinitamente
